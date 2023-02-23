@@ -1,0 +1,23 @@
+{
+  "name": "lu-sqs-logger",
+  "version": "1.0.1",
+  "description": "This is a test package to send events to aws sqs as logs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaikhshoieb22/npm-pkg.git"
+  },
+  "author": "Shoieb Shaikh <shaikhshoieb22>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaikhshoieb22/npm-pkg/issues"
+  },
+  "homepage": "https://github.com/shaikhshoieb22/npm-pkg#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1321.0",
+    "colors": "^1.4.0"
+  }
+}
