@@ -18,6 +18,7 @@
   "homepage": "https://github.com/shaikhshoieb22/npm-pkg#readme",
   "dependencies": {
     "aws-sdk": "^2.1321.0",
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3"
   }
 }
