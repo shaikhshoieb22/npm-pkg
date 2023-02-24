@@ -25,8 +25,8 @@ function SQSLogger(config){
     this.verbose = config.verbose || false;
     this.awsSecretKey = config.awsSecretKey || false;
     this.awsSecretId = config.awsSecretId || false;
-    if(process.env.awsSecretId && process.env.awsSecretKey) {
-        AWS.config.update({accessKeyId: process.env.awsSecretId, secretAccessKey: process.env.awsSecretKey});
+    if(this.awsSecretId && this.awsSecretKey) {
+        AWS.config.update({accessKeyId: this.awsSecretId, secretAccessKey: this.awsSecretKey});
     }
     this.SQS = new AWS.SQS({apiVersion: this.apiVersion,region:this.region});
     this.AWS = AWS;
