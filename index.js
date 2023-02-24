@@ -12,16 +12,21 @@ function SQSLogger(config){
         throw e;
         return e;
     }
+
+    if(!config.awsSecretKey || !config.awsSecretId){
+        var e = new Error('awsSecretKey'.yellow + ' and awskSecretId '.yellow+' must be defined in the config');
+        throw e;
+        return e;
+    }
     this.queueURL = config.QueueUrl;
     this.apiVersion = config.apiVersion || 'latest';
     this.region = config.region || 'ap-south-1';
     this.delay = config.delaySeconds || 0;
     this.verbose = config.verbose || false;
-    this.AWS_SECRET_ACCESS_KEY = config.AWS_SECRET_ACCESS_KEY || false;
-    this.AWS_SECRET_ACCESS_KEY = config.AWS_SECRET_ACCESS_KEY || false;
-    if(process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY) {
-        console.log(process.env)
-        AWS.config.update({accessKeyId: process.env.AWS_ACCESS_KEY_ID, secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY});
+    this.awsSecretKey = config.awsSecretKey || false;
+    this.awsSecretId = config.awsSecretId || false;
+    if(process.env.awsSecretId && process.env.awsSecretKey) {
+        AWS.config.update({accessKeyId: process.env.awsSecretId, secretAccessKey: process.env.awsSecretKey});
     }
     this.SQS = new AWS.SQS({apiVersion: this.apiVersion,region:this.region});
     this.AWS = AWS;
