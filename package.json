@@ -1,6 +1,6 @@
 {
   "name": "lu-sqs-logger",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is a test package to send events to aws sqs as logs",
   "main": "index.js",
   "scripts": {
