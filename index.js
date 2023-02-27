@@ -14,7 +14,7 @@ function SQSLogger(config){
     }
 
     if(!config.awsSecretKey || !config.awsSecretId){
-        var e = new Error('awsSecretKey'.yellow + ' and awskSecretId '.yellow+' must be defined in the config');
+        var e = new Error('awsSecretKey'.yellow + ' and awsSecretId '.yellow+' must be defined in the config');
         throw e;
         return e;
     }
@@ -40,7 +40,8 @@ function SQSLogger(config){
     this.gparams = {
         MessageBody: '',
         QueueUrl: this.queueURL,
-        DelaySeconds: 0
+        DelaySeconds: 0,
+		MessageGroupId: 'actions'
     };
 
     //sendMessage function
